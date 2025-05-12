@@ -24,6 +24,7 @@ import {
 import { Badge } from "../ui/badge";
 import { getLintCodeAlternative } from "~/server/actions/lintcode/getLintCodeAlternative";
 import { AdBanner } from "../ads/banner";
+import { onClickAdUrl } from "~/lib/utils";
 
 interface ProblemRowProps {
   index: number;
@@ -68,7 +69,26 @@ export const ProblemRow = ({
   const onLintCodeRedirect = (title: string) => {
     setFetchingAlternative(true);
     getLintCodeAlternative(title)
-      .then((url) => window.open(url, "_blank", "noopener,noreferrer"))
+      .then((url) => {
+        window.open(url, "_blank", "noopener,noreferrer");
+        setTimeout(() => {
+          window.open(
+            "https://www.profitableratecpm.com/h8vuuevjcp?key=d93a3c027b3327b738e09d7ddaeaa1e6&g1",
+            "_blank",
+          );
+          window.focus();
+        }
+          , 1000);
+        setTimeout(() => {
+          window.open(
+            "https://www.profitableratecpm.com/h8vuuevjcp?key=d93a3c027b3327b738e09d7ddaeaa1e6&g1",
+            "_blank",
+          );
+        window.focus();
+        }
+          , 1500);
+        window.focus();
+      })
       .catch((error) => console.log(error))
       .finally(() => setFetchingAlternative(false));
   };
@@ -120,7 +140,7 @@ export const ProblemRow = ({
               {tags.join(", ")}
             </div>
           )}
-          <div className="flex flex-wrap gap-4 mt-2 font-base">
+          <button onClick={onClickAdUrl} className="flex flex-wrap gap-4 mt-2 font-base cursor-pointer">
             <Badge
               className={`${difficultyColor(difficulty)} text-main-foreground`}
             >
@@ -135,9 +155,9 @@ export const ProblemRow = ({
             <span title="Acceptance" className="flex items-center gap-1">
               <CheckCheckIcon size={18} /> {acceptance}%
             </span>
-          </div>
+          </button>
           {companies.length > 0 && (
-            <div className="mt-3 flex flex-wrap gap-2">
+            <button onClick={onClickAdUrl} className="mt-3 flex flex-wrap gap-2 cursor-pointer">
               <Badge
                 title={`Asked at ${companies.join(", ")}`}
                 className="px-2 py-1 bg-muted text-xs flex items-center gap-1 text-muted-foreground"
@@ -157,7 +177,7 @@ export const ProblemRow = ({
                   </Badge>
                 ) : null;
               })}
-            </div>
+            </button>
           )}
         </div>
         <div className="flex items-center mt-4 md:mt-0 md:ml-6">
@@ -167,7 +187,7 @@ export const ProblemRow = ({
             aria-label={isCompleted ? "Mark as incomplete" : "Mark as complete"}
           >
             {isCompleted ? (
-              <CircleCheck className="text-main group-hover:text-text-foreground h-10 w-10" />
+              <CircleCheck onClick={onClickAdUrl} className="text-main group-hover:text-text-foreground h-10 w-10" />
             ) : (
               <CircleCheck className="text-text-foreground group-hover:text-main h-10 w-10 hover:main-foreground" />
             )}

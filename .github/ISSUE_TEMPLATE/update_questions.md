@@ -1,8 +1,8 @@
 ---
-title: Update Questions
-labels: sync
+name: Tracking Source Repository
+about: Only be used by github actions.
+assignees: zaCKoZAck0
+title: "Update Questions"
 ---
 
-New commits detected in [leetcode-company-wise-problems](https://github.com/liquidslr/leetcode-company-wise-problems).
-
-Please review the changes and update your repository accordingly.
+@zaCKoZAck0 Please sync the updated problems.
